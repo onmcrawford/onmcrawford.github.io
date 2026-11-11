@@ -1,5 +1,5 @@
-baseURL: "https://examplesite.com/"
-title: SomeSiteName
+baseURL: "https://onmcrawford.github.io/"
+title: "Otto's blog" 
 paginate: 5
 theme: PaperMod
 
@@ -9,17 +9,17 @@ buildFuture: false
 buildExpired: false
 
 minify:
-  disableXML: true
-  minifyOutput: true
+  disableXML: false
+  minifyOutput: false
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: SomeSiteName
-  description: "ExampleSite description"
+  title: "Otto's blog"
+  description: "Otto's blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Otto Crawford
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  # images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -32,13 +32,16 @@ params:
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
-  disableSpecial1stPost: false
+  disableSpecial1stPost: true
   disableScrollToTop: false
   comments: false
   hidemeta: false
   hideSummary: false
   showtoc: false
   tocopen: false
+
+  mainSections:
+    - posts
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -50,9 +53,9 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
+    # text: "Home"
+    # icon: /apple-touch-icon.png
+    # iconHeight: 35
 
   # profile-mode
   profileMode:
@@ -71,24 +74,20 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "."
-    Content: Welcome to my blog
+    Title: "Otto's blog"
+    Content: Welcome to my blog!
 
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/onmcrawford"
 
   analytics:
     google:
-      SiteVerificationTag: "XYZabc"
+      # SiteVerificationTag: "XYZabc"
     bing:
-      SiteVerificationTag: "XYZabc"
+      # SiteVerificationTag: "XYZabc"
     yandex:
-      SiteVerificationTag: "XYZabc"
+      # SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -96,7 +95,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/onmcrawford/onmcrawford.github.io/blob/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -111,12 +110,13 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
+
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
     - identifier: tags
       name: tags
       url: /tags/
@@ -125,10 +125,7 @@ menu:
       name: search
       url: /search/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
@@ -139,3 +136,13 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
