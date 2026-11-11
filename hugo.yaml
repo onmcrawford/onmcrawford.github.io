@@ -146,3 +146,7 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+caches:
+  images:
+    dir: :cacheDir/images
